@@ -1,22 +1,33 @@
 import * as React from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import Header from './src/components/Header';
+import axios from 'axios';
 
 export default class App extends React.Component {
-  renderList() {
-    const names = [
-      'Bill Gates Jr.',
-      'Edward Snowden',
-      'Ayn Rand',
-      'Jon Johansen',
-      'Nikola Tesla',
-    ];
+  constructor(props) {
+    super(props);
 
-    const textElements = names.map((name) => {
-      return <Text key={name}>
-        { name }
-      </Text>;
-    });
+    this.state = {
+      peoples: []
+    };
+  }
+
+  componentDidMount() {
+    axios
+      .get('https://randomuser.me/api/?nat=br&results=5')
+      .then(response => {
+        const { results } = response.data;
+        this.setState({
+          peoples: results
+        });
+      })
+  }
+
+  renderList() {
+    const textElements = this.state.peoples.map(people => {
+      const { first } = people.name;
+      return <Text key={ first }>{ first }</Text>
+    })
 
     return textElements;
   }
