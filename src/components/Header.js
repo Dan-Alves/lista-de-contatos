@@ -11,12 +11,12 @@ const Header = (props) => (
 const style = StyleSheet.create({
   container: {
     marginTop: 25,
-    backgroundColor: '#522d5b',
+    backgroundColor: '#142850',
     alignItems: 'center',
   },
   title: {
     fontSize: 50,
-    color: '#d7385e',
+    color: '#dadddf',
   }
 });
 
