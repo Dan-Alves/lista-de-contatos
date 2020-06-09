@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, Text, View } from 'react-native';
 import Header from './src/components/Header';
 import PeopleList from './src/components/PeopleList';
 import axios from 'axios';
