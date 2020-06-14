@@ -6,7 +6,6 @@ const PeopleListItem = props => {
   const { title, first, last } = people.name;
   return (
     <TouchableOpacity onPress={() => {
-      console.log('clicouuu', first);
       navigateToPeopleDetail({ people });
     }}>  
       <View style={styles.line}> 
