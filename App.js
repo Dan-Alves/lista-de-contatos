@@ -8,11 +8,22 @@ const StackNavigator = createStackNavigator ({
     screen: PeoplePage
   },
   'PeopleDetail': {
-    screen: PeopleDetailPage
+    screen: PeopleDetailPage,
+    navigationOptions: ({ navigation }) => {
+      const peopleName = navigation.state.params.people.name.first;
+      return ({
+          title: peopleName,
+          headerTitleStyle: {
+            color: 'white',
+            fontSize: 30,
+          }
+      });
+    }
   }
 }, {
   defaultNavigationOptions: {
     title: 'Pessoas',
+    headerTintColor: '#fff',
     headerStyle: {
       backgroundColor: '#142850',
       borderBottomWidth: 1,
@@ -21,7 +32,6 @@ const StackNavigator = createStackNavigator ({
     headerTitleStyle: {
       color: 'white',
       fontSize: 30,
-
       flexGrow: 1,
       textAlign: 'center'
     }

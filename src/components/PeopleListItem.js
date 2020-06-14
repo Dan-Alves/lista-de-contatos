@@ -7,7 +7,7 @@ const PeopleListItem = props => {
   return (
     <TouchableOpacity onPress={() => {
       console.log('clicouuu', first);
-      navigateToPeopleDetail();
+      navigateToPeopleDetail({ people });
     }}>  
       <View style={styles.line}> 
         <Image style={styles.avatar} source={{ uri: people.picture.thumbnail }} />
@@ -34,13 +34,10 @@ const styles = StyleSheet.create({
   },
   avatar: {
     aspectRatio: 1,
-<<<<<<< HEAD
     flex: 1,
-=======
     width: 40,
     flex: 1,
 
->>>>>>> 7635ddb6ba7460c10e478492fbb14fcb36c9313e
     marginLeft: 15,
     borderRadius: 50
   }
