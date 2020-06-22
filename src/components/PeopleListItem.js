@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 const PeopleListItem = props => {
   const { people, navigateToPeopleDetail } = props;
-  const { title, first, last } = people.name;
+  const { first, last } = people.name;
   return (
     <TouchableOpacity onPress={() => {
       navigateToPeopleDetail({ people });
@@ -11,7 +11,7 @@ const PeopleListItem = props => {
       <View style={styles.line}> 
         <Image style={styles.avatar} source={{ uri: people.picture.thumbnail }} />
           <Text style={styles.lineText}>
-            { `${title}  ${first}  ${last}` }
+            { `${first} ${last}` }
           </Text>
       </View>
     </TouchableOpacity>
