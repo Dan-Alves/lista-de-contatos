@@ -25,14 +25,17 @@ export default class PeoplePage extends React.Component {
             loading: false,
           });
         })
-    }, 15)
+    }, 1500)
   }
 
   render() {
-    // this.props.navigation.navigate('PeopleDetail');
     return (
       <View>
-        <ActivityIndicator size="large" color="#142850" />
+        {
+            this.state.loading 
+                ? <ActivityIndicator size="large" color="#142850" />
+                : null
+        }
         <PeopleList 
           peoples={this.state.peoples} 
           onPressItem={pageParams => {
