@@ -22,7 +22,7 @@ const PeopleList = props => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#88e1f2'
+    backgroundColor: '#e2f9ff'
   },
 
 })
